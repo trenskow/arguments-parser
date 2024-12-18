@@ -1,0 +1,32 @@
+{
+	"name": "@trenskow/arguments-parser",
+	"version": "0.1.0",
+	"description": "Yet another arguments parser.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/trenskow/arguments-parser.git"
+	},
+	"keywords": [
+		"arguments",
+		"parser",
+		"argument",
+		"parse"
+	],
+	"author": "Kristian Trenskow <this.is@kristians.email>",
+	"license": "BSD-3-Clause",
+	"bugs": {
+		"url": "https://github.com/trenskow/arguments-parser/issues"
+	},
+	"homepage": "https://github.com/trenskow/arguments-parser#readme",
+	"dependencies": {
+		"@trenskow/caseit": "^1.4.5",
+		"@trenskow/print": "^0.1.0",
+		"eslint": "^9.17.0",
+		"isvalid": "^4.1.23"
+	}
+}

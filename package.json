@@ -26,7 +26,11 @@
 	"dependencies": {
 		"@trenskow/caseit": "^1.4.5",
 		"@trenskow/print": "^0.1.0",
-		"eslint": "^9.17.0",
 		"isvalid": "^4.1.23"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3.2.0",
+		"@eslint/js": "^9.17.0",
+		"globals": "^15.14.0"
 	}
 }

@@ -26,7 +26,7 @@
 	"dependencies": {
 		"@trenskow/caseit": "^1.4.10",
 		"@trenskow/print": "^0.1.19",
-		"isvalid": "^4.1.36"
+		"isvalid": "^4.1.38"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",

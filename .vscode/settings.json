@@ -1,8 +1,9 @@
 {
-    "cSpell.words": [
-        "caseit",
-        "isvalid",
-        "Kristian",
-        "trenskow"
-    ]
+	"cSpell.words": [
+		"caseit",
+		"isvalid",
+		"Kristian",
+		"trenskow"
+	],
+	"editor.formatOnSave": true
 }

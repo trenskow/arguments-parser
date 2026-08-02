@@ -6,4 +6,68 @@
 // See license in LICENSE.
 //
 
-export { default } from './lib/index.js';
+import { plugins } from 'isvalid';
+
+import argumentsParser from './lib/index.js';
+import autocomplete from './lib/autocomplete/index.js';
+
+plugins.use('argumentsParser.dummies', () => ({
+	phase: 'pre',
+	supportsType: () => true,
+	validatorsForType: () => ({
+		description: ['string'],
+		defaultDescription: ['string'],
+		secret: ['boolean'],
+		short: ['string']
+	}),
+	validate: (data) => data,
+	formalize: (schema) => schema
+}));
+
+plugins.use('argumentsParser.hints', () => ({
+	phase: 'pre',
+	supportsType: () => true,
+	validatorsForType: () => ({
+		hints: ['array', 'string']
+	}),
+	validate: (data) => data,
+	formalize: (data, _, schema) => {
+
+		if (!Array.isArray(data)) data = [data];
+
+		if (schema.errors.hints) {
+			data.push(schema.errors.hints);
+			delete schema.errors.hints;
+		}
+
+		if (data.some((data) => typeof data !== 'string')) throw new Error('Must be a string.');
+
+		return data;
+
+	}
+}));
+
+plugins.use('argumentsParser.autocomplete', () => ({
+	phase: 'pre',
+	supportsType: () => true,
+	validatorsForType: () => ({
+		autocomplete: ['array', 'string']
+	}),
+	validate: (data) => data,
+	formalize: (data, _, schema) => {
+
+		if (!Array.isArray(data)) data = [data];
+
+		if (schema.errors.autocomplete) {
+			data.push(schema.errors.autocomplete);
+			delete schema.errors.autocomplete;
+		}
+
+		if (data.some((data) => typeof data !== 'string')) throw new Error('Must be a string.');
+
+		return data;
+
+	}
+}));
+
+export default autocomplete(process.env.AUTOCOMPLETE) || argumentsParser;

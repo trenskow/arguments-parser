@@ -80,6 +80,42 @@ Options:
 
 > The validation schema is described in package [isvalid](https://github.com/trenskow/isvalid).
 
+## Autocomplete
+
+This supports Bash and ZSH autocomplete of the box.
+
+> In both examples below replace `my_script` with the actual name of the script.
+
+### Bash
+
+The completion script for Bash should be installed as below.
+
+````bash
+_my_script() {
+    eval "$(AUTOCOMPLETE=bash my_script "${COMP_WORDS[@]}")"
+}
+
+complete -F _my_script my_script
+````
+
+#### ZSH
+
+The completion script for ZSH should be installed as below.
+
+````zsh
+#compdef my_script
+
+_my_script() {
+
+	local -a completions
+
+	eval "$(AUTOCOMPLETE=zsh my_script ${words[@]})"
+
+}
+
+_my_script
+````
+
 # License
 
 See license in LICENSE.

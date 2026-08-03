@@ -24,10 +24,10 @@
 	},
 	"homepage": "https://github.com/trenskow/arguments-parser#readme",
 	"dependencies": {
-		"@trenskow/caseit": "^1.4.29",
-		"@trenskow/parallel": "^0.1.132",
-		"@trenskow/print": "^0.1.72",
-		"isvalid": "^5.0.19"
+		"@trenskow/caseit": "^1.4.30",
+		"@trenskow/parallel": "^0.1.133",
+		"@trenskow/print": "^0.1.73",
+		"isvalid": "^5.0.20"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.6",

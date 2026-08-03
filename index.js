@@ -51,19 +51,14 @@ plugins.use('argumentsParser.autocomplete', () => ({
 	phase: 'pre',
 	supportsType: () => true,
 	validatorsForType: () => ({
-		autocomplete: ['array', 'string']
+		autocomplete: ['array', 'function']
 	}),
 	validate: (data) => data,
-	formalize: (data, _, schema) => {
+	formalize: (data) => {
 
-		if (!Array.isArray(data)) data = [data];
-
-		if (schema.errors.autocomplete) {
-			data.push(schema.errors.autocomplete);
-			delete schema.errors.autocomplete;
+		if (!(Array.isArray(data) && data.every((data) => typeof data === 'string')) && typeof data !== 'function') {
+			throw new Error('Must be a string or a function.');
 		}
-
-		if (data.some((data) => typeof data !== 'string')) throw new Error('Must be a string.');
 
 		return data;
 

@@ -6,7 +6,14 @@
 // See license in LICENSE.
 //
 
-import { plugins } from 'isvalid';
+import {
+	basename,
+	extname
+} from 'path';
+
+import {
+	plugins
+} from 'isvalid';
 
 import argumentsParser from './lib/index.js';
 import autocomplete from './lib/autocomplete/index.js';
@@ -64,5 +71,19 @@ plugins.use('argumentsParser.autocomplete', () => ({
 
 	}
 }));
+
+if (process.argv[2] === '_completion') {
+
+	const path = process.env.COMPLETION_PATH || process.argv[1];
+
+	autocomplete.script({
+		shell: process.argv[3],
+		command: basename(path)
+			.slice(0, -extname(path).length)
+	});
+
+	process.exit(0);
+
+}
 
 export default autocomplete(process.env.AUTOCOMPLETE) || argumentsParser;

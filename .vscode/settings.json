@@ -1,6 +1,10 @@
 {
 	"cSpell.words": [
 		"caseit",
+		"compdef",
+		"compgen",
+		"COMPREPLY",
+		"CWORD",
 		"isvalid",
 		"Kristian",
 		"trenskow"

@@ -74,12 +74,15 @@ plugins.use('argumentsParser.autocomplete', () => ({
 
 if (process.argv[2] === '_completion') {
 
-	const path = process.env.COMPLETION_PATH || process.argv[1];
+	let command = basename(process.env.COMPLETION_PATH || process.argv[1]);
+
+	const ext = extname(command);
+
+	if (ext.length) command = command.slice(0, -ext.length);
 
 	autocomplete.script({
 		shell: process.argv[3],
-		command: basename(path)
-			.slice(0, -extname(path).length)
+		command
 	});
 
 	process.exit(0);

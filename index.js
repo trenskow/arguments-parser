@@ -86,4 +86,4 @@ if (process.argv[2] === '_completion') {
 
 }
 
-export default autocomplete(process.env.AUTOCOMPLETE) || argumentsParser;
+export default typeof process.env.AUTOCOMPLETE_INDEX !== 'undefined' ? autocomplete() : argumentsParser;

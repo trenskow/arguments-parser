@@ -1,6 +1,6 @@
 {
 	"name": "@trenskow/arguments-parser",
-	"version": "0.3.145",
+	"version": "0.3.146",
 	"description": "Yet another arguments parser.",
 	"main": "index.js",
 	"type": "module",

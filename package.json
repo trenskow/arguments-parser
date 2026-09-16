@@ -25,7 +25,7 @@
 	"homepage": "https://github.com/trenskow/arguments-parser#readme",
 	"dependencies": {
 		"@trenskow/caseit": "^1.4.32",
-		"@trenskow/parallel": "^0.1.140",
+		"@trenskow/parallel": "^0.1.141",
 		"@trenskow/print": "^0.1.78",
 		"isvalid": "^5.0.25"
 	},

@@ -26,7 +26,7 @@
 	"dependencies": {
 		"@trenskow/caseit": "^1.4.32",
 		"@trenskow/parallel": "^0.1.143",
-		"@trenskow/print": "^0.1.79",
+		"@trenskow/print": "^0.1.80",
 		"isvalid": "^5.0.27"
 	},
 	"devDependencies": {

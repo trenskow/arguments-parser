@@ -27,7 +27,7 @@
 		"@trenskow/caseit": "^1.4.33",
 		"@trenskow/parallel": "^0.1.145",
 		"@trenskow/print": "^0.1.81",
-		"isvalid": "^5.0.28"
+		"isvalid": "^5.0.29"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.7",
